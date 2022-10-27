@@ -9,4 +9,5 @@ Added: Interests
 Added: GitHub Profile
 2. Added about section (ripped from Github profile)
 
+Hosted on Github Pages here: https://unrealjune.github.io/389TProject5/
 
