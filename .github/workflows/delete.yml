@@ -1,0 +1,19 @@
+name: Delete
+on: workflow_dispatch
+
+jobs:
+  deploy:
+    name: Delete
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone Repo
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ secrets.HOST }} 
+          username: ${{ secrets.USERNAME }}
+          password: ${{ secrets.PASSWORD }}
+          port: ${{ secrets.PORT }}
+          script: |
+              cd /pub/jphilip/
+              rm -rf 389TProject5
+              
