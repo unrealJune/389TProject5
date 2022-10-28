@@ -6,12 +6,13 @@ jobs:
     name: Clone
     runs-on: ubuntu-latest
     steps:
-    - name: executing remote ssh commands using password
-      uses: appleboy/ssh-action@v0.1.4
+    - name: Remote SSH Commands
+      uses: fifsky/ssh-action@v0.0.6
       with:
-        username: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PASSWORD }}
+        command: |
+          cd /tmp
+          ls -a
         host: ${{ secrets.HOST }}
-        script: whoami
-              
+        user: jphilip
+        pass: ${{ secrets.PASSWORD}}
               
