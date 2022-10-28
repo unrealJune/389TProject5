@@ -1,0 +1,19 @@
+name: Update
+on: push
+ branches:
+      - 'main'
+jobs:
+  deploy:
+    name: Clone
+    runs-on: ubuntu-latest
+    steps:
+    - name: Remote SSH Commands
+      uses: fifsky/ssh-action@v0.0.6
+      with:
+        command: |
+          cd /pub/jphilip/
+          cd 389TProject5
+          git pull
+        host: ${{ secrets.HOST }}
+        user: jphilip
+        pass: ${{ secrets.PASSWORD}}
