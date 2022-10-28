@@ -14,8 +14,6 @@ jobs:
           password: ${{ secrets.PASSWORD }}
           port: ${{ secrets.PORT }}
           script: |
-              cd /pub/jphilip/
-              rm -rf 389TProject5
-              git clone https://github.com/unrealJune/389TProject5.git
+              ls
               
               
