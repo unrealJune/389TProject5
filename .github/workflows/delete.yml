@@ -1,0 +1,19 @@
+name: Delete
+on: workflow_dispatch
+
+jobs:
+  deploy:
+    name: Delete
+    runs-on: ubuntu-latest
+    steps:
+    - name: Remote SSH Commands
+      uses: fifsky/ssh-action@v0.0.6
+      with:
+        command: |
+          cd /pub/jphilip/
+          rm -rf 389TProject5
+          
+        host: ${{ secrets.HOST }}
+        user: jphilip
+        pass: ${{ secrets.PASSWORD}}
+              
